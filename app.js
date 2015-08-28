@@ -11,6 +11,11 @@ app.controller('MainCtrl', ['$scope', '$http', '$firebaseArray', function ($scop
  	}
 }]);
 
+app.filter('reverse', function() {
+  return function(items) {
+    return items.slice().reverse();
+  };
+});
 // Eventually toggle between Obama and Putin
 
 // app.controller('FirebaseCtrl', ['$scope', '$firebaseArray', 

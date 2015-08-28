@@ -18,13 +18,14 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-6 col-sm-offset-3">
+        <input ng-model="msg" ng-keydown="sendMessage($event)" type="text" id="messageInput"  placeholder="Contact WDI19/20!">
         <ul>
-          <li ng-repeat="msg in messages">
+          <li ng-repeat="msg in messages | reverse">
             <strong>{{ msg.from }}</strong>
             {{ msg.body }}
           </li>
         </ul>
-        <input ng-model="msg" ng-keydown="sendMessage($event)" type="text" id="messageInput"  placeholder="Contact WDI19/20!">
+
       </div>
     </div>
   </div>
