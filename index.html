@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="crisisApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- bootstrap css -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <title>Crisis!</title>
+  <!-- angular -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-resource.min.js"></script>  <!-- custom script -->
+  <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+  <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</head>
+<body ng-controller="MainCtrl">
+  <input ng-model="msg" ng-keydown="sendMessage($event)" type="text" id="messageInput"  placeholder="Contact Putin!">
+
+  <ul>
+    <li ng-repeat="msg in messages">
+      <strong>{{ msg.from }}</strong>
+      {{ msg.body }}
+    </li>
+  </ul>
+</body>
+</html>
