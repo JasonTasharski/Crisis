@@ -15,13 +15,19 @@
   <script type="text/javascript" src="app.js"></script>
 </head>
 <body ng-controller="MainCtrl">
-  <input ng-model="msg" ng-keydown="sendMessage($event)" type="text" id="messageInput"  placeholder="Contact Putin!">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <ul>
+          <li ng-repeat="msg in messages">
+            <strong>{{ msg.from }}</strong>
+            {{ msg.body }}
+          </li>
+        </ul>
+        <input ng-model="msg" ng-keydown="sendMessage($event)" type="text" id="messageInput"  placeholder="Contact WDI19/20!">
+      </div>
+    </div>
+  </div>
 
-  <ul>
-    <li ng-repeat="msg in messages">
-      <strong>{{ msg.from }}</strong>
-      {{ msg.body }}
-    </li>
-  </ul>
 </body>
 </html>
